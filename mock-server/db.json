@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "id": "u_1",
+      "email": "demo@example.com",
+      "password": "demo123"
+    },
+    {
+      "id": "u_2",
+      "email": "student@example.com",
+      "password": "student123"
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "s_1",
+      "userId": "u_1",
+      "name": "Netflix",
+      "price": 15.99,
+      "category": "entertainment",
+      "billingPeriod": "monthly",
+      "nextPaymentDate": "2026-05-03",
+      "status": "active",
+      "notifyBeforeDays": 3
+    },
+    {
+      "id": "s_2",
+      "userId": "u_1",
+      "name": "GitHub Copilot",
+      "price": 10,
+      "category": "services",
+      "billingPeriod": "monthly",
+      "nextPaymentDate": "2026-05-10",
+      "status": "active",
+      "notifyBeforeDays": 5
+    },
+    {
+      "id": "s_3",
+      "userId": "u_1",
+      "name": "Coursera",
+      "price": 399,
+      "category": "education",
+      "billingPeriod": "yearly",
+      "nextPaymentDate": "2026-09-15",
+      "status": "inactive",
+      "notifyBeforeDays": 14
+    },
+    {
+      "id": "s_4",
+      "userId": "u_2",
+      "name": "Spotify",
+      "price": 10.99,
+      "category": "entertainment",
+      "billingPeriod": "monthly",
+      "nextPaymentDate": "2026-05-01",
+      "status": "active",
+      "notifyBeforeDays": 2
+    }
+  ],
+  "category-limits": [
+    {
+      "id": "cl_1",
+      "userId": "u_1",
+      "category": "entertainment",
+      "monthlyLimit": 35
+    },
+    {
+      "id": "cl_2",
+      "userId": "u_1",
+      "category": "education",
+      "monthlyLimit": 50
+    }
+  ],
+  "notifications": [
+    {
+      "id": "n_1",
+      "userId": "u_1",
+      "subscriptionId": "s_1",
+      "message": "Netflix будет списан 2026-05-03",
+      "isRead": false
+    }
+  ]
+}
