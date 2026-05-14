@@ -78,6 +78,20 @@
       "subscriptionId": "s_1",
       "message": "Netflix будет списан 2026-05-03",
       "isRead": false
+    },
+    {
+      "id": "175f3505-2a1e-494e-be48-2a10e3db3858",
+      "userId": "u_1",
+      "subscriptionId": "s_1",
+      "message": "Netflix будет списан 2026-05-03",
+      "isRead": false
+    },
+    {
+      "id": "e3b4fcc1-ac72-4fa7-8f67-5f14c4f0cf2c",
+      "userId": "u_1",
+      "subscriptionId": "s_2",
+      "message": "GitHub Copilot будет списан 2026-05-10",
+      "isRead": false
     }
   ]
 }
