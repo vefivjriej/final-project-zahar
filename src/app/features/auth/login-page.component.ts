@@ -42,7 +42,11 @@ import { selectAuthError, selectAuthLoading } from '@store/auth/auth.selectors';
             <p class="error">{{ error }}</p>
           }
 
-          <button tuiButton type="submit" [disabled]="form.invalid || ((loading$ | async) ?? false)">
+          <button
+            tuiButton
+            type="submit"
+            [disabled]="form.invalid || ((loading$ | async) ?? false)"
+          >
             {{ (loading$ | async) ? 'Входим...' : 'Войти' }}
           </button>
         </form>

@@ -21,13 +21,17 @@ test.describe('subscription manager', () => {
     await page.getByTestId('subscription-date').fill('2026-05-20');
     await page.getByTestId('save-subscription').click();
 
-    await expect(page.getByTestId('subscription-row').filter({ hasText: 'YouTube Premium' })).toBeVisible();
+    await expect(
+      page.getByTestId('subscription-row').filter({ hasText: 'YouTube Premium' })
+    ).toBeVisible();
   });
 
   test('filters subscriptions by category', async ({ page }) => {
     await page.getByRole('link', { name: 'Подписки' }).click();
     await page.getByTestId('category-filter').selectOption('education');
 
-    await expect(page.getByTestId('subscription-row').filter({ hasText: 'Coursera' })).toBeVisible();
+    await expect(
+      page.getByTestId('subscription-row').filter({ hasText: 'Coursera' })
+    ).toBeVisible();
   });
 });

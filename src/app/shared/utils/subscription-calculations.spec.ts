@@ -64,10 +64,7 @@ describe('subscription calculations', () => {
 
   it('returns upcoming payments for the next range', () => {
     const result = upcomingPayments(
-      [
-        baseSubscription,
-        { ...baseSubscription, id: 's_2', nextPaymentDate: '2026-06-15' }
-      ],
+      [baseSubscription, { ...baseSubscription, id: 's_2', nextPaymentDate: '2026-06-15' }],
       new Date(2026, 3, 25),
       10
     );

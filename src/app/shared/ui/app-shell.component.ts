@@ -37,7 +37,9 @@ import { selectUnreadNotificationsCount } from '@store/notifications/notificatio
       <div class="content">
         <header class="topbar">
           <span class="muted">{{ (user$ | async)?.email }}</span>
-          <button tuiButton size="s" appearance="flat" type="button" (click)="logout()">Выйти</button>
+          <button tuiButton size="s" appearance="flat" type="button" (click)="logout()">
+            Выйти
+          </button>
         </header>
 
         <main>

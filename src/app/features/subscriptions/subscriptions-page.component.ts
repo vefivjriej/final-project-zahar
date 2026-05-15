@@ -61,7 +61,12 @@ import {
 
           <label class="form-field">
             <span>Цена</span>
-            <input data-testid="subscription-price" type="number" min="0.01" formControlName="price" />
+            <input
+              data-testid="subscription-price"
+              type="number"
+              min="0.01"
+              formControlName="price"
+            />
             @if (form.controls.price.touched && form.controls.price.invalid) {
               <small>Цена должна быть больше 0</small>
             }
@@ -104,11 +109,18 @@ import {
           </label>
 
           <div class="actions form-actions">
-            <button tuiButton data-testid="save-subscription" type="submit" [disabled]="form.invalid">
+            <button
+              tuiButton
+              data-testid="save-subscription"
+              type="submit"
+              [disabled]="form.invalid"
+            >
               {{ editingSubscription() ? 'Сохранить' : 'Добавить' }}
             </button>
             @if (editingSubscription()) {
-              <button tuiButton appearance="flat" type="button" (click)="resetForm()">Отмена</button>
+              <button tuiButton appearance="flat" type="button" (click)="resetForm()">
+                Отмена
+              </button>
             }
           </div>
         </form>
@@ -192,7 +204,13 @@ import {
                     </td>
                     <td>
                       <div class="actions">
-                        <button tuiButton size="xs" appearance="flat" type="button" (click)="edit(subscription)">
+                        <button
+                          tuiButton
+                          size="xs"
+                          appearance="flat"
+                          type="button"
+                          (click)="edit(subscription)"
+                        >
                           Изменить
                         </button>
                         <button

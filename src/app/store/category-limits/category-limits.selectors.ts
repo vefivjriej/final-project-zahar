@@ -8,7 +8,10 @@ import { CategoryLimitsState } from './category-limits.reducer';
 export const selectCategoryLimitsState =
   createFeatureSelector<CategoryLimitsState>('categoryLimits');
 
-export const selectCategoryLimits = createSelector(selectCategoryLimitsState, (state) => state.items);
+export const selectCategoryLimits = createSelector(
+  selectCategoryLimitsState,
+  (state) => state.items
+);
 export const selectCategoryLimitsLoading = createSelector(
   selectCategoryLimitsState,
   (state) => state.loading

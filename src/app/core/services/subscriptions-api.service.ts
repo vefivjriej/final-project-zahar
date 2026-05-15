@@ -30,7 +30,10 @@ export class SubscriptionsApiService {
   }
 
   update(subscription: Subscription): Observable<Subscription> {
-    return this.api.put<Subscription, Subscription>(`/subscriptions/${subscription.id}`, subscription);
+    return this.api.put<Subscription, Subscription>(
+      `/subscriptions/${subscription.id}`,
+      subscription
+    );
   }
 
   updateStatus(subscription: Subscription, status: SubscriptionStatus): Observable<Subscription> {

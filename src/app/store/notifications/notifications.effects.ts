@@ -70,10 +70,13 @@ export class NotificationsEffects {
         }
 
         const existingKeys = new Set(
-          notifications.map((notification) => `${notification.subscriptionId}:${notification.message}`)
+          notifications.map(
+            (notification) => `${notification.subscriptionId}:${notification.message}`
+          )
         );
         const newNotifications = buildDueNotifications(subscriptions, userId).filter(
-          (notification) => !existingKeys.has(`${notification.subscriptionId}:${notification.message}`)
+          (notification) =>
+            !existingKeys.has(`${notification.subscriptionId}:${notification.message}`)
         );
 
         return from(newNotifications).pipe(
@@ -98,9 +101,11 @@ export class NotificationsEffects {
       mergeMap(({ notification }) =>
         this.api
           .markRead(notification)
-          .pipe(map((updatedNotification) =>
-            NotificationsActions.markReadSuccess({ notification: updatedNotification })
-          ))
+          .pipe(
+            map((updatedNotification) =>
+              NotificationsActions.markReadSuccess({ notification: updatedNotification })
+            )
+          )
       )
     )
   );

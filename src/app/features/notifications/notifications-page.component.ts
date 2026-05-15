@@ -35,7 +35,13 @@ import { SubscriptionsActions } from '@store/subscriptions/subscriptions.actions
               <article class="notification" [class.unread]="!notification.isRead">
                 <p>{{ notification.message }}</p>
                 @if (!notification.isRead) {
-                  <button tuiButton size="xs" appearance="flat" type="button" (click)="markRead(notification)">
+                  <button
+                    tuiButton
+                    size="xs"
+                    appearance="flat"
+                    type="button"
+                    (click)="markRead(notification)"
+                  >
                     Прочитано
                   </button>
                 }

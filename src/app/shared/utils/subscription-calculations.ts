@@ -27,7 +27,9 @@ export function monthlyCost(subscription: Subscription): number {
 }
 
 export function totalMonthlyCost(subscriptions: readonly Subscription[]): number {
-  return roundMoney(subscriptions.reduce((total, subscription) => total + monthlyCost(subscription), 0));
+  return roundMoney(
+    subscriptions.reduce((total, subscription) => total + monthlyCost(subscription), 0)
+  );
 }
 
 export function expensesByCategory(

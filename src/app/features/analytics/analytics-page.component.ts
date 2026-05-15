@@ -83,10 +83,7 @@ export class AnalyticsPageComponent implements OnInit {
     this.store.dispatch(SubscriptionsActions.load());
   }
 
-  barWidth(
-    value: number,
-    expenses: Record<SubscriptionCategory, number>
-  ): number {
+  barWidth(value: number, expenses: Record<SubscriptionCategory, number>): number {
     const max = Math.max(...Object.values(expenses), 1);
 
     return Math.round((value / max) * 100);

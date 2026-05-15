@@ -4,10 +4,7 @@ import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angula
 import { Store } from '@ngrx/store';
 import { TuiButton } from '@taiga-ui/core';
 
-import {
-  SUBSCRIPTION_CATEGORIES,
-  SubscriptionCategory
-} from '@shared/models/domain.models';
+import { SUBSCRIPTION_CATEGORIES, SubscriptionCategory } from '@shared/models/domain.models';
 import { CategoryLabelPipe } from '@shared/pipes/category-label.pipe';
 import { CategoryLimitsActions } from '@store/category-limits/category-limits.actions';
 import {

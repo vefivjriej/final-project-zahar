@@ -8,8 +8,7 @@ import {
 
 import { SubscriptionsState } from './subscriptions.reducer';
 
-export const selectSubscriptionsState =
-  createFeatureSelector<SubscriptionsState>('subscriptions');
+export const selectSubscriptionsState = createFeatureSelector<SubscriptionsState>('subscriptions');
 
 export const selectSubscriptions = createSelector(selectSubscriptionsState, (state) => state.items);
 export const selectSubscriptionsLoading = createSelector(
@@ -38,7 +37,9 @@ export const selectFilteredSubscriptions = createSelector(
       .filter((subscription) =>
         filters.category === 'all' ? true : subscription.category === filters.category
       )
-      .filter((subscription) => (filters.status === 'all' ? true : subscription.status === filters.status))
+      .filter((subscription) =>
+        filters.status === 'all' ? true : subscription.status === filters.status
+      )
       .slice()
       .sort((left, right) =>
         sort === 'price'

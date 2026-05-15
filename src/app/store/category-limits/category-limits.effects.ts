@@ -41,7 +41,10 @@ export class CategoryLimitsEffects {
   upsert$ = createEffect(() =>
     this.actions$.pipe(
       ofType(CategoryLimitsActions.upsert),
-      withLatestFrom(this.store.select(selectCurrentUserId), this.store.select(selectCategoryLimits)),
+      withLatestFrom(
+        this.store.select(selectCurrentUserId),
+        this.store.select(selectCategoryLimits)
+      ),
       switchMap(([{ category, monthlyLimit }, userId, limits]) => {
         if (!userId) {
           return of(CategoryLimitsActions.upsertFailure({ error: 'Нет пользователя' }));

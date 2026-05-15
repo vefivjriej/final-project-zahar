@@ -1,10 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 
-import {
-  Subscription,
-  SubscriptionFilters,
-  SubscriptionSort
-} from '@shared/models/domain.models';
+import { Subscription, SubscriptionFilters, SubscriptionSort } from '@shared/models/domain.models';
 
 import { SubscriptionsActions } from './subscriptions.actions';
 
