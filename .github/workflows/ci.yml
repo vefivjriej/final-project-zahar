@@ -5,6 +5,9 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -20,15 +23,31 @@ jobs:
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: npm run e2e
-      - name: Upload production artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: subscription-payments-manager
-          path: dist/subscription-payments-manager
 
   deploy:
     needs: verify
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - run: echo "Deploy step placeholder: connect Vercel, Netlify, Firebase Hosting, or GitHub Pages."
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build -- --base-href /final-project-zahar/
+      - name: Add 404.html for SPA routing
+        run: cp dist/subscription-payments-manager/browser/index.html dist/subscription-payments-manager/browser/404.html
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/subscription-payments-manager/browser
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
